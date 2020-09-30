@@ -9,5 +9,8 @@
     padding: 25px;
     min-width: 800px;
     margin-left: 10vw;
-    transition: margin-left .5s ease-in-out;
+    -moz-transition: margin-left .5s ease-in-out, opacity .5s ease-in-out;
+    -o-transition: margin-left .5s ease-in-out, opacity .5s ease-in-out;
+    -webkit-transition: margin-left .5s ease-in-out, opacity .5s ease-in-out;
+    transition: margin-left .5s ease-in-out, opacity .5s ease-in-out;
 }

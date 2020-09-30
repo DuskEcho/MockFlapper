@@ -10,8 +10,11 @@ class FlowPage extends Component {
         this.state = {
             currentPage: 0,
             pages: this.props.pages,
-            style: {marginLeft: "2000px"},
-            isLoading: true
+            entering: this.props.enteringStyle ? this.props.enteringStyle : {marginLeft: "2000px"},
+            entered: this.props.enteredStyle ? this.props.enteredStyle : {marginLeft: "15vw"},
+            leaving: this.props.leavingStyle ? this.props.leavingStyle : {marginLeft: "-2000px"},
+            _mounted: false,
+            style: {}
         };
         this.buttonClick = this.buttonClick.bind(this);
     }
@@ -19,11 +22,12 @@ class FlowPage extends Component {
 
     componentDidMount() {
         this.setState({
-            style: {"marginLeft":"2000px"},
-        })
+            style: this.state.entering,
+            _mounted: true
+        });
         setTimeout(()=>{
             this.setState({
-                style: {"marginLeft":"15vw"},
+                style: this.state.entered,
             })
         }, 1)
     }
@@ -31,13 +35,20 @@ class FlowPage extends Component {
     componentDidUpdate(prevProps, prevState, snapshot) {
     }
 
+    componentWillUnmount() {
+        this.setState({
+            _mounted: false
+        })
+    }
 
     buttonClick() {
         this.setState({
-            style: {"marginLeft":"-2000px"},
+            style: this.state.leaving,
         });
         setTimeout(()=>{
-            this.props.click();
+            if (this.state._mounted){
+                this.props.click();
+            }
         }, 1000);
     }
 
