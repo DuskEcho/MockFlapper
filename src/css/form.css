@@ -1,0 +1,45 @@
+
+.form{
+    width: 10vw;
+    display: inline-block;
+    margin-right: 7vw;
+}
+.form-wide{
+    width: 15vw;
+    display: inline-block;
+    margin-right: 7vw;
+}
+.form-small{
+    width: 7vw;
+    display: inline-block;
+    margin-right: 7vw;
+}
+.form-tiny{
+    width: 5vw;
+    display: inline-block;
+    margin-right: 3vw;
+}
+
+.label{
+    margin-right: 2vw;
+}
+
+.page-title-container{
+    width: 100%;
+    text-align: center;
+    margin-bottom: 8vh;
+}
+.page-title{
+    display: block;
+    margin: 0 auto;
+}
+.next-button{
+    margin-right: 1vw;
+    margin-left: auto;
+    display: block;
+    font-size: x-large;
+
+}
+.form-row{
+    margin-bottom: 7vh;
+}

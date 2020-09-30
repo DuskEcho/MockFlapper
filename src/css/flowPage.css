@@ -1,0 +1,12 @@
+
+.flow-page{
+    margin: 0 auto;
+    width: 70vw;
+    height: 70vh;
+    border-radius: 30px;
+    text-align: left;
+    overflow: hidden;
+    padding: 25px;
+    min-width: 800px;
+    transition: margin-left .3s;
+}
