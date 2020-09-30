@@ -20,6 +20,8 @@ class SlideFlow extends Component{
       isLoading: false
     };
     this.updatePage = this.updatePage.bind(this);
+    this.nextPage = this.nextPage.bind(this);
+    this.prevPage = this.prevPage.bind(this);
   }
 
 
@@ -33,7 +35,7 @@ class SlideFlow extends Component{
                                click={()=>{this.setState({currentPage: this.state.currentPage +1})}}/>)
         }
         else {
-          pages.push(<FlowPage key={i} body={this.props.pages[i].body} goodButtonText={"Next"} click={()=>{this.setState({currentPage: this.state.currentPage +1})}}/>)
+          pages.push(<FlowPage key={i} body={this.props.pages[i].body} goodButtonText={"Next"} prevClick={this.prevPage} nextClick={this.nextPage}/>)
         }
       }
     }
@@ -44,13 +46,23 @@ class SlideFlow extends Component{
   }
 
   updatePage(){
+  }
 
+  nextPage(){
+    let {currentPage} = this.state;
+    let {pages} = this.props;
+    this.props.addClick(pages[currentPage+1].title);
+    this.setState({currentPage: this.state.currentPage +1})
+
+  }
+
+  prevPage(){
+    this.setState({currentPage: Math.max(this.state.currentPage -1, 0)});
+    this.props.removeClick();
   }
 
 
   render() {
-  console.log(this.state)
-
     return (
         <div className="slide-flow">
           {this.state.pages[this.state.currentPage]}

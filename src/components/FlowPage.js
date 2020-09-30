@@ -46,10 +46,10 @@ class FlowPage extends Component {
             style: this.state.leaving,
         });
         setTimeout(()=>{
-            if (this.state._mounted){
-                this.props.click();
+            if (this.state._mounted && this.props.nextClick){
+                this.props.nextClick();
             }
-        }, 1000);
+        }, 500);
     }
 
 
