@@ -10,7 +10,7 @@ class FlowPage extends Component {
         this.state = {
             currentPage: 0,
             pages: this.props.pages,
-            style: {"transition": "all 1s", marginLeft: "2000px"},
+            style: {marginLeft: "2000px"},
             isLoading: true
         };
         this.buttonClick = this.buttonClick.bind(this);
@@ -19,11 +19,11 @@ class FlowPage extends Component {
 
     componentDidMount() {
         this.setState({
-            style: {"transition": "all 1s", "marginLeft":"2000px"},
+            style: {"marginLeft":"2000px"},
         })
         setTimeout(()=>{
             this.setState({
-                style: {"transition": "all 1s", "marginLeft":"15vw"},
+                style: {"marginLeft":"15vw"},
             })
         }, 1)
     }
@@ -34,7 +34,7 @@ class FlowPage extends Component {
 
     buttonClick() {
         this.setState({
-            style: {"transition": "all 1s", "marginLeft":"-2000px"},
+            style: {"marginLeft":"-2000px"},
         });
         setTimeout(()=>{
             this.props.click();

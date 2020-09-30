@@ -28,10 +28,10 @@ class SlideFlow extends Component{
     if (this.props.pages && this.props.pages.length) {
       for (let i = 0; i < this.props.pages.length; ++i) {
         if (i === this.props.pages.length - 1){
-          pages.push(<FlowPage key={i} body={this.props.pages[i].body} goodButtonText={"Submit"} click={()=>{this.setState({currentPage: this.currentPage +1})}}/>)
+          pages.push(<FlowPage key={i} body={this.props.pages[i].body} goodButtonText={"Submit"} click={()=>{this.setState({currentPage: this.state.currentPage +1})}}/>)
         }
         else {
-          pages.push(<FlowPage key={i} body={this.props.pages[i].body} goodButtonText={"Next"} click={()=>{this.setState({currentPage: this.currentPage +1})}}/>)
+          pages.push(<FlowPage key={i} body={this.props.pages[i].body} goodButtonText={"Next"} click={()=>{this.setState({currentPage: this.state.currentPage +1})}}/>)
         }
       }
     }
@@ -47,7 +47,7 @@ class SlideFlow extends Component{
 
 
   render() {
-
+  console.log(this.state)
 
     return (
         <div className="slide-flow">
