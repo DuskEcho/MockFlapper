@@ -16,7 +16,7 @@ class SlideFlow extends Component{
 
     this.state = {
       currentPage: 0,
-      pages: this.props.pages,
+      pages: [],
       isLoading: false
     };
     this.updatePage = this.updatePage.bind(this);
@@ -24,6 +24,18 @@ class SlideFlow extends Component{
 
 
   componentDidMount() {
+    let pages = [];
+    if (this.props.pages && this.props.pages.length) {
+      for (let i = 0; i < this.props.pages.length; ++i) {
+        if (i === this.props.pages.length - 1){
+          pages.push(<FlowPage key={i} body={this.props.pages[i].body} goodButtonText={"Submit"} click={()=>{this.setState({currentPage: this.currentPage +1})}}/>)
+        }
+        else {
+          pages.push(<FlowPage key={i} body={this.props.pages[i].body} goodButtonText={"Next"} click={()=>{this.setState({currentPage: this.currentPage +1})}}/>)
+        }
+      }
+    }
+    this.setState({pages: pages})
   }
 
   componentDidUpdate(prevProps, prevState, snapshot) {
@@ -39,9 +51,7 @@ class SlideFlow extends Component{
 
     return (
         <div className="slide-flow">
-          <FlowPage body={this.state.pages[this.state.currentPage]}>
-
-          </FlowPage>
+          {this.state.pages[this.state.currentPage]}
         </div>
     );
   }

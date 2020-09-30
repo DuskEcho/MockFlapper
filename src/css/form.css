@@ -2,20 +2,23 @@
 .form{
     width: 10vw;
     display: inline-block;
-    margin-right: 7vw;
+    margin-right: 5vw;
+}
+.form-huge{
+    width: 20vw;
+    display: inline-block;
+    margin-right: 5vw;
 }
 .form-wide{
     width: 15vw;
     display: inline-block;
-    margin-right: 7vw;
 }
 .form-small{
     width: 7vw;
     display: inline-block;
-    margin-right: 7vw;
 }
 .form-tiny{
-    width: 5vw;
+    width: 6vw;
     display: inline-block;
     margin-right: 3vw;
 }

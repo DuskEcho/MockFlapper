@@ -8,5 +8,6 @@
     overflow: hidden;
     padding: 25px;
     min-width: 800px;
+    margin-left: 10vw;
     transition: margin-left .3s;
 }
